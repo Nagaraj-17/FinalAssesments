@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ClassLibrary1.botuque>
+
+@{
+    ViewBag.Title = "GetCloths";
+}
+
+<h2>GetCloths</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddNewBotuque")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClothId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClothBrand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClothSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClothPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClothId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClothBrand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClothSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClothPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Add", "AddNewBotuque", new {  id=item.ClothId}) |
+            @Html.ActionLink("Update", "UpdateBotuque", new {  id=item.ClothId }) |
+            @Html.ActionLink("Delete", "DeleteBotuque", new {  id=item.ClothId })
+        </td>
+    </tr>
+}
+
+</table>

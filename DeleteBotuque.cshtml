@@ -1,0 +1,56 @@
+﻿@model ClassLibrary1.botuque
+
+@{
+    ViewBag.Title = "DeleteBotuque";
+}
+
+<h2>DeleteBotuque</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>botuque</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClothId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClothId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClothBrand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClothBrand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClothSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClothSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClothPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClothPrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "GetCloths")
+        </div>
+    }
+</div>
